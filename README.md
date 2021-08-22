@@ -10,6 +10,7 @@ Go to : https://hub.docker.com ->
 
 pull the following images:
 
+
   jawahars07/naming-server
   
   jawahars07/api-gateway
@@ -18,6 +19,7 @@ pull the following images:
   
   jawahars07/currency-exchange-service
 
+(:0.0.1-SNAPSHOT for all services)
 Run the application :
 
 For Eureka Naming Server = localhost:8761
