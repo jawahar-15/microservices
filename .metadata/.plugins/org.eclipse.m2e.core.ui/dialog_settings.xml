@@ -3,13 +3,14 @@
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
 			<item value="C:\Users\jawah\eclipse-workspace\docker"/>
+			<item value="C:\Users\jawah\Downloads\spring-microservices-v2-main\spring-microservices-v2-main\05.kubernetes"/>
+			<item value="C:\Users\jawah\eclipse-workspace\restful-web-services"/>
 			<item value="C:\Users\jawah\eclipse-workspace\api-gateway"/>
 			<item value="C:\Users\jawah\eclipse-workspace\naming-server"/>
 			<item value="C:\Users\jawah\eclipse-workspace\currency-conversion-service"/>
 			<item value="C:\Users\jawah\eclipse-workspace\currency-exchange-service"/>
 			<item value="C:\Users\jawah\eclipse-workspace\spring-cloud-config-server"/>
 			<item value="C:\Users\jawah\eclipse-workspace\limits-service"/>
-			<item value="C:\Users\jawah\eclipse-workspace\restful-web-services"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

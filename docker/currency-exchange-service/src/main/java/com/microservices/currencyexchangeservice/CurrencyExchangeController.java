@@ -31,7 +31,7 @@ public class CurrencyExchangeController {
 		if(Objects.isNull(currencyExchange)) {
 			throw new RuntimeException("Data Not Available for " + from + " to "+ to);
 		}
-		currencyExchange.setEnvironment(env.getProperty("local.server.port"));
+		currencyExchange.setEnvironment(env.getProperty("local.server.port") + " " + "v12" + " " + env.getProperty("HOSTNAME"));
 		return currencyExchange;
 	}
 	

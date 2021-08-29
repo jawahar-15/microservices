@@ -10,8 +10,8 @@
 	</parent>
 	<groupId>com.microservices</groupId>
 	<artifactId>currency-conversion-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>currency-conversion-service</name>
+	<version>0.0.12-SNAPSHOT</version>
+	<name>currency-conversion-kubernetes-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -26,7 +26,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
@@ -34,7 +34,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-
+ -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -71,7 +71,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name> jawahars07/${project.artifactId}:${project.version}</name>
+						<name> jawahars07/k8s-${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy> IF_NOT_PRESENT </pullPolicy>
 				</configuration>

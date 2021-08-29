@@ -10,8 +10,8 @@
 	</parent>
 	<groupId>com.microservices</groupId>
 	<artifactId>currency-exchange-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>currency-exchange-service</name>
+	<version>0.0.12-SNAPSHOT</version>
+	<name>currency-exchange-kubernetes-service</name>
 	<description>Spring Cloud Config Server</description>
 	<properties>
 		<java.version>11</java.version>
@@ -42,7 +42,7 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
@@ -50,9 +50,9 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-		</dependency>
+		</dependency> -->
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
@@ -60,7 +60,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -105,7 +105,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name> jawahars07/${project.artifactId}:${project.version}</name>
+						<name> jawahars07/k8s-${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy> IF_NOT_PRESENT </pullPolicy>
 				</configuration>
