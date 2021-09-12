@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="actuator/health/liveness"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="true"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="linkec"/>
+			<item value="removeAt"/>
+			<item value="prepend"/>
+			<item value="print"/>
+			<item value="insertAt"/>
+			<item value="MyLinkedList"/>
 			<item value="actuator/health/liveness"/>
 			<item value="/actuator/health/readiness"/>
 			<item value="spec"/>
-			<item value="currency-exchange"/>
-			<item value="service"/>
-			<item value="${CURRENCY_EXCHANGE_SERVICE_HOST:http://localhost}:8000"/>
-			<item value="aop"/>
-			<item value="net"/>
-			<item value="CHANGE-KUBERNETES"/>
-			<item value="artifactId"/>
 		</list>
 		<list key="replacehistory">
 		</list>
