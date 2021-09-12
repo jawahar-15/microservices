@@ -37,4 +37,3 @@ http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
 http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
 
 http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10
-
