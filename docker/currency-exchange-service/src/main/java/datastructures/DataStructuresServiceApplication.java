@@ -30,7 +30,7 @@ public class DataStructuresServiceApplication {
 //			System.out.println(result[i]);
 //		}
 		
-		int[] numbers = {1,2,3,4,5,6,7};
+//		int[] numbers = {1,2,3,4,5,6,7};
 //		System.out.println(maxSubArray(numbers));
 
 //		int[] result = moveZeroes(numbers);
@@ -63,15 +63,103 @@ public class DataStructuresServiceApplication {
 //		myll.reverse();
 //		myll.print();
 		
-		MyDoublyLinkedList mydll = new MyDoublyLinkedList(1);
-		mydll.append(2);
-		mydll.append(3);
-		mydll.prepend(0);
-		mydll.prepend(-1);
-		mydll.insertAt(5, 4);
-		mydll.reverse();
-		mydll.print();
+//		MyDoublyLinkedList mydll = new MyDoublyLinkedList(1);
+//		mydll.append(2);
+//		mydll.append(3);
+//		mydll.prepend(0);
+//		mydll.prepend(-1);
+//		mydll.insertAt(5, 4);
+//		mydll.reverse();
+//		mydll.print();
+		
+		// STACKS
+//		MyStack stk = new MyStack();
+//		stk.push(10);
+//		stk.push(25);
+//		stk.push(30);
+//		stk.push(45);
+//		stk.push(55);
+//		stk.push(60);
+//		stk.push(75);
+//		System.out.println(stk.peek());
+//		stk.print();
+//		System.out.println("Deleted value is :"  +  stk.pop());
+//		stk.pop();
+//		stk.print();
+
+		// Queue
+//		MyQueue queue = new MyQueue();
+//		queue.enqueue(10);
+//		queue.enqueue(20);
+//		queue.enqueue(30);
+//		queue.enqueue(40);
+//		queue.enqueue(50);
+//		System.out.println("Peeek :" + queue.peek());
+//		queue.dequeue();
+//		System.out.println("Peeek :" + queue.peek());
+//		queue.dequeue();
+//		System.out.println("Peeek :" + queue.peek());
+//		queue.print();
+
+//		QueueUsingStack qs = new QueueUsingStack();
+//		qs.push(10);
+//		qs.push(20);
+//		qs.push(30);
+		
+//		MyBST bst = new MyBST();
+//		bst.insert(9);
+//		bst.insert(4);
+//		bst.insert(20);
+////		bst.insert(1);
+//		bst.insert(6);
+//		bst.insert(15);
+//		bst.insert(170);
+//		bst.print(bst.head);
+//		System.out.println("Looking up for 9 ");
+//		bst.lookup(9);
+//		System.out.println("Looking up for 4 ");
+//		bst.lookup(4);
+//		System.out.println("Looking up for 20 ");
+//		bst.lookup(20);
+//		System.out.println("Looking up for 170 ");
+//		bst.lookup(170);
+//		System.out.println("Looking up for 1 ");
+//		bst.lookup(1);
+//		System.out.println("Looking up for 15 ");
+//		bst.lookup(15);
+//		System.out.println("Looking up for 6 ");
+//		bst.lookup(6);
+//		
+//		bst.remove(20);
+//		System.out.println("//////////////////");
+//		System.out.println("Looking up for 9 ");
+//		bst.lookup(9);
+//		System.out.println("Looking up for 4 ");
+//		bst.lookup(4);
+//		System.out.println("Looking up for 20 ");
+//		bst.lookup(20);
+//		System.out.println("Looking up for 170 ");
+//		bst.lookup(170);
+//		System.out.println("Looking up for 1 ");
+//		bst.lookup(1);
+//		System.out.println("Looking up for 15 ");
+//		bst.lookup(15);
+//		System.out.println("Looking up for 6 ");
+//		bst.lookup(6);
+//		bst.print(bst.head);
+//		Trie abc = null;
 //		SpringApplication.run(CurrencyExchangeServiceApplication.class, args);
+//		Factorial fac  = new Factorial();
+//		System.out.println(fac.facRecursive(2));
+//		System.out.println(fac.facLoop(2));
+//		System.out.println("Looopp ---" + Fibonacci.fibLoop(43));
+//		System.out.println("Recursive ---" + Fibonacci.fibRecursive(43));
+		System.out.println(StringReverse.reverse("I am Jawahar "));
+		int[] ar = {0,6,7,8,1,324,11,67};
+//		BubbleSort.sort(ar);
+//		SelectionSort.sort(ar);
+//		InsertionSort.sort(ar);
+		MergeSort.sort(ar);
 	}
 	
 	public static String longestString(String sen) {
