@@ -1,6 +1,11 @@
 package datastructures;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
+import java.util.Queue;
+
 
 public class MyBST {
 	
@@ -74,6 +79,90 @@ public class MyBST {
 		System.out.println("No Node found to be removed!");
 	}
 	
+	void breadthSearch() {
+		Node currNode = this.head;
+		Queue<Node> queue = new LinkedList<MyBST.Node>();
+		List<Integer> values = new ArrayList<Integer>(); 
+		queue.add(currNode);
+		while(queue.size() > 0) {
+			Node curr = queue.poll();
+			values.add(curr.value);
+			if(Objects.nonNull(curr.left)) {
+				queue.add(curr.left);
+			}
+			if(Objects.nonNull(curr.right)) {
+				queue.add(curr.right);
+			}
+		}
+		for(int i=0;i<values.size();i++) {			
+			System.out.println(values.get(i));
+		}
+		
+	}
+	
+	// Inorder
+	void depthSearchInorder() {
+		List<Integer> values = new ArrayList<Integer>();
+		traverseInOrder(this.head,values);
+		System.out.print("In Order Traversal : ");
+		for(int i=0;i<values.size();++i) {			
+			System.out.print(" "+ values.get(i));
+		}
+		System.out.println();
+	}
+	
+	private void traverseInOrder(Node root,List<Integer> list) {
+		if(Objects.nonNull(root.left)) {
+			traverseInOrder(root.left,list);
+		}
+		list.add(root.value);
+		if(Objects.nonNull(root.right)) {
+			traverseInOrder(root.right,list);
+		}
+	}
+
+	// Preorder
+	void depthSearchPreOrder() {
+		List<Integer> values = new ArrayList<Integer>();
+		traversePreOrder(this.head,values);
+		System.out.print("Pre Order Traversal : ");
+		for(int i=0;i<values.size();++i) {			
+			System.out.print(" "+ values.get(i));
+		}
+		System.out.println();
+	}
+	
+	private void traversePreOrder(Node root,List<Integer> list) {
+		list.add(root.value);
+		if(Objects.nonNull(root.left)) {
+			traversePreOrder(root.left,list);
+		}
+		if(Objects.nonNull(root.right)) {
+			traversePreOrder(root.right,list);
+		}
+	}
+
+	// Postorder
+	void depthSearchPostorder() {
+		List<Integer> values = new ArrayList<Integer>();
+		traversePostOrder(this.head,values);
+		System.out.print("Post Order Traversal : ");
+		for(int i=0;i<values.size();++i) {			
+			System.out.print(" "+ values.get(i));
+		}
+		System.out.println();
+	}
+	
+	private void traversePostOrder(Node root,List<Integer> list) {
+		if(Objects.nonNull(root.left)) {
+			traversePostOrder(root.left,list);
+		}
+		if(Objects.nonNull(root.right)) {
+			traversePostOrder(root.right,list);
+		}
+		list.add(root.value);
+	}
+
 	void print(Node head) {
 		System.out.println("--" + head.value);
 		if(Objects.nonNull(head.left)) {
@@ -84,6 +173,20 @@ public class MyBST {
 		}
 	}
 	
+	boolean checkIsValidBST(Node root) {
+		if(root == null) {
+			return true;
+		} else {
+			boolean flag = false;
+			if(root.left!=null) {
+				flag = root.value > root.left.value; 
+			} 
+			if(root.right!=null) {
+				flag = root.value < root.right.value; 						
+			}
+			return flag && checkIsValidBST(root.left) && checkIsValidBST(root.right);
+		}
+	}
 	class Node {
 		Node left;
 		Node right;

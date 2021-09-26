@@ -4,9 +4,9 @@ public class MergeSort {
 
 	public static void sort(int[] array) {
 		mergeSort(array,0,array.length-1);
-//		for(int i=0;i<array.length ;i++) {			
-//			System.out.println(array[i]);
-//		}
+		for(int i=0;i<array.length ;i++) {			
+			System.out.println(array[i]);
+		}
 	}
 	
 	private static void mergeSort(int[] array,int low , int high) {
@@ -38,9 +38,8 @@ public class MergeSort {
 			mergedAr[k++]=array[j++];
 		}
 		
-		
-		for(int o=0;o<mergedAr.length;o++) {
-			System.out.print(" " + mergedAr[o]);
+		for(int z=low;z<=high;z++) {
+			array[z]=mergedAr[z-low];
 		}
 		System.out.println();
 	}

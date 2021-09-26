@@ -2,7 +2,14 @@ package datastructures;
 
 public class Fibonacci {
 
+	public static int calc=0;
+	public static void main(int[] ...args) {
+		System.out.println(fibRecursive(20));
+		System.out.println("Calc Value :" + calc);
+	}
 	public static int fibRecursive(int n) {
+		calc++;
+		System.out.println("Calc value" + calc);
 		int first =0;
 		int second = 1;
 		if(n == 0) {

@@ -1,5 +1,6 @@
 package datastructures;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -154,12 +155,40 @@ public class DataStructuresServiceApplication {
 //		System.out.println(fac.facLoop(2));
 //		System.out.println("Looopp ---" + Fibonacci.fibLoop(43));
 //		System.out.println("Recursive ---" + Fibonacci.fibRecursive(43));
-		System.out.println(StringReverse.reverse("I am Jawahar "));
-		int[] ar = {0,6,7,8,1,324,11,67};
+//		System.out.println(StringReverse.reverse("I am Jawahar "));
+		int[] ar = {25,24,23,22,21,20,19,15,14,13,12,11,10,9,8,77,6,5,4,3,2,1,0};
 //		BubbleSort.sort(ar);
 //		SelectionSort.sort(ar);
 //		InsertionSort.sort(ar);
-		MergeSort.sort(ar);
+//		MergeSort.sort(ar);
+//		QuickSort.sort(ar);
+//		HeapSort.heapSort(ar);
+//		for(int i=0;i<ar.length;i++)
+//		System.out.print(" " + ar[i]);
+//		SortingAlgo.bubbleSort(ar);
+//		SortingAlgo.selectionSort(ar);
+//		SortingAlgo.insertionSort(ar);
+//		SortingAlgo.mergeSort(ar);
+//		SortingAlgo.quickSort(ar);
+//		SortingAlgo.heapSort(ar);
+//		System.out.println(SearchingAlgo.binarySearch(ar, 22));
+		MyBST bst = new MyBST();
+		bst.insert(9);
+		bst.insert(4);
+		bst.insert(6);
+		bst.insert(20);
+		bst.insert(170);
+		bst.insert(15);
+		bst.insert(1);
+//		bst.print();	
+//		bst.breadthSearch();
+//		bst.depthSearchInorder();
+//		bst.depthSearchPreOrder();
+//		bst.depthSearchPostorder();
+		int[] prices = {2,1,1,2};
+//		System.out.println(maxProfit(prices));
+//		System.out.println(climbStairs(7));
+		System.out.println(rob(prices));
 	}
 	
 	public static String longestString(String sen) {
@@ -319,4 +348,48 @@ public class DataStructuresServiceApplication {
         }
         return indices;
 	 }
+	 
+    private static int maxProfit(int[] prices) {
+        int firstMin = 9999999;
+        int sell=0;
+        for(int i=0;i<prices.length;i++) {
+        	if(prices[i] < firstMin) {
+        		firstMin=prices[i];
+        	} else if(prices[i] - firstMin > sell) {
+        		sell = prices[i]-firstMin;
+        	}
+        }
+        return sell;
+    }
+    
+    private static int climbStairs(int n) {
+    	List<Integer> steps = new ArrayList<Integer>();
+    	steps.add(1);
+    	steps.add(2);
+    	for(int i=2;i<n;i++){
+            steps.add(steps.get(i-1) + steps.get(i-2));
+        }
+        return steps.get(n-1);
+    }
+
+    private static int rob(int[] nums) {
+    	if(nums.length == 0) {
+    		return 0;
+    	} else if(nums.length ==1) {
+    		return nums[0];
+    	} else if(nums.length==2){
+    		return Math.max(nums[0], nums[1]);
+    	} else {
+    		int result=0;
+    		int b=Math.max(nums[0], nums[1]);
+    		int c=nums[0];
+    		for(int i=2;i<nums.length;i++) {
+    			result = Math.max(b, c+nums[i]);
+    			c= b;
+    			b=result;
+    		}
+    		return result;
+    	}
+    	
+    }
 }
