@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -188,7 +189,29 @@ public class DataStructuresServiceApplication {
 		int[] prices = {2,1,1,2};
 //		System.out.println(maxProfit(prices));
 //		System.out.println(climbStairs(7));
-		System.out.println(rob(prices));
+//		System.out.println(rob(prices));
+		int [] nums1 = {4,9,5};
+		int [] nums2 = {9,4,9,8};
+//		int[] result = intersect(nums1,nums2);
+//		for(int i = 0;i<result.length ;i++) {
+//			System.out.println(result[i]);
+//		}
+//		List<List<Integer>> abc = generate(5);
+		char sudoku[][]= {
+				{'.','8','7','6','5','4','3','2','1'},
+				{'2','.','.','.','.','.','.','.','.'},
+				{'3','.','.','.','.','.','.','.','.'},
+				{'4','.','.','.','.','.','.','.','.'},
+				{'5','.','.','.','.','.','.','.','.'},
+				{'6','.','.','.','.','.','.','.','.'},
+				{'7','.','.','.','.','.','.','.','.'},
+				{'8','.','.','.','.','.','.','.','.'},
+				{'9','.','.','.','.','.','.','.','.'}
+		};
+//		System.out.println(isValidSudoku(sudoku));
+		int[][] matrix = {{1,3,5,7},{10,11,16,20},{23,30,34,60}};
+//		System.out.println(searchMatrix(matrix,3));
+		System.out.println(firstUniqChar("aabb"));
 	}
 	
 	public static String longestString(String sen) {
@@ -392,4 +415,126 @@ public class DataStructuresServiceApplication {
     	}
     	
     }
+    
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        Map<Integer,Integer> lookup = new HashMap<Integer,Integer>();
+        List<Integer> result = new ArrayList<>();
+        for(int i =0 ;i<nums1.length;i++){
+            lookup.put(nums1[i] , lookup.getOrDefault(nums1[i],0)+1);
+        }
+        for(int j =0 ;j<nums2.length  ;j++){
+        	if(lookup.getOrDefault(nums2[j],0) > 0) {        		
+        		result.add(nums2[j]);
+        	}
+        }
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+    
+    private static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> outerList = new ArrayList<>();
+        if(numRows == 0) {
+            return outerList;
+        } else {
+            for(int i=0;i<numRows;i++) {
+            	List<Integer> innerList = new ArrayList<>();
+                for(int j=0;j<=i;j++){
+                    if(j==0 || j == i) {
+                        innerList.add(1);
+                    } else {
+                        int temp1 = Objects.nonNull(outerList.get(i-1).get(j)) ? outerList.get(i-1).get(j) : 0;
+                        int temp2 = Objects.nonNull(outerList.get(i-1).get(j-1)) ? outerList.get(i-1).get(j-1) : 0; 
+                        innerList.add(temp1+temp2);
+                    }                    
+                }
+                outerList.add(innerList);
+            }
+        }
+        return outerList;
+    }
+
+    // Sudoku
+    private static boolean isValidSudoku(char[][] board) {        
+    	
+	    
+    	for(int j=0;j<9;j++){
+    		Map<Character,Integer> lookup1 = new HashMap<>();
+	        for(int i=0;i<9;i++){
+	            if(board[j][i]!='.'){
+	                if(lookup1.getOrDefault(board[j][i],0) != 0 ) {
+	                    return false;
+	                }else {
+	                    lookup1.put(board[j][i], 1);             
+	                }
+	            }
+	        }
+	    }
+    //
+	    
+	    for(int j=0;j<9;j++){
+	    	Map<Character,Integer> lookup2= new HashMap<>();
+	        for(int i=0;i<9;i++){
+	            if(board[i][j]!='.'){
+	                if(lookup2.getOrDefault(board[i][j],0) != 0 ) {
+	                    return false;
+	                }else {
+	                    lookup2.put(board[i][j], 1);             
+	                }
+	            }
+	        }            
+	    }
+    
+    //
+	    int m =0,n=0;
+	    while(m<9 && n<9){
+	    	Map<Character,Integer> lookup3= new HashMap<>();
+	        for(int i=m;i<(m+3);i++){
+	            for(int j=n;j<(n+3);j++){
+	                if(board[i][j]!='.'){
+	                     if(lookup3.getOrDefault(board[i][j],0) != 0 ) {
+	                        return false;
+	                    }else {
+	                        lookup3.put(board[i][j], 1);             
+	                    }
+	                }
+	            }
+	        }
+	        n+=3;
+	        if(n>8) {
+	            n=0;
+	            m+=3;
+	        }
+	    }
+	    
+	    return true;
+}
+
+    private static boolean searchMatrix(int[][] matrix, int target) {
+        int i=0;
+        for(;i<matrix.length && matrix[i][0]<=target;i++){
+             //
+        }
+        int j=0;
+        while(j<matrix[i].length){
+            if(matrix[i][j] == target) {
+                return true;
+            }
+            j++;
+        }
+        return false;
+    }
+
+    private static  int firstUniqChar(String s) {
+    	int[] chars = new int[26];
+    	s = s.toUpperCase();
+    	for(int i=0;i<s.length();i++) {
+    		chars[s.charAt(i)-'A']++;
+    	}
+    	for(int i=0;i<s.length();i++) {
+    		if(chars[s.charAt(i) - 'A'] == 1) {
+    			return i;
+    		}
+    	}
+    	return -1;
+    }
+
 }

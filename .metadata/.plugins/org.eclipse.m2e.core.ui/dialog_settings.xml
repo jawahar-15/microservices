@@ -2,6 +2,11 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\jawah\eclipse-workspace\start-here-guidelines"/>
+			<item value="C:\Users\jawah\eclipse-workspace\facebook-security"/>
+			<item value="C:\Users\jawah\eclipse-workspace\jwt-security"/>
+			<item value="C:\Users\jawah\eclipse-workspace\ldap-security"/>
+			<item value="C:\Users\jawah\eclipse-workspace\jdbc-login"/>
 			<item value="C:\Users\jawah\eclipse-workspace\web-security"/>
 			<item value="C:\Users\jawah\eclipse-workspace\docker"/>
 			<item value="C:\Users\jawah\Downloads\spring-microservices-v2-main\spring-microservices-v2-main\05.kubernetes"/>
